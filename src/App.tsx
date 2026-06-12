@@ -655,7 +655,7 @@ export default function App() {
       ctx.fillRect(110, 465, 310, 42);
       
       ctx.fillStyle = "#ffffff";
-      ctx.font = "bold 13px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "bold 13px Arial, Helvetica, sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       
@@ -700,7 +700,7 @@ export default function App() {
 
       // Gold monogram
       ctx.fillStyle = "#fbbf24";
-      ctx.font = "900 13px 'Be Vietnam Pro', sans-serif";
+      ctx.font = "900 13px Arial, Helvetica, sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("BC", 0, 0.5);
@@ -709,11 +709,11 @@ export default function App() {
       // Main Headers - aligned beautiful left column
       ctx.textAlign = "left";
       ctx.fillStyle = "#d97706"; // Premium gold/amber
-      ctx.font = "italic 700 28px 'Be Vietnam Pro', sans-serif";
+      ctx.font = "italic 700 28px Arial, Helvetica, sans-serif";
       ctx.fillText("Chứng nhận vinh danh", 580, 115); // aligned next to brand logo
 
       ctx.fillStyle = "#064e3b"; // Slate emerald
-      ctx.font = "900 42px 'Be Vietnam Pro', sans-serif";
+      ctx.font = "900 42px Arial, Helvetica, sans-serif";
       ctx.fillText("BẰNG KHEN THÀNH TÍCH", 520, 175);
 
       // Elegant gold divider line
@@ -724,23 +724,15 @@ export default function App() {
       ctx.lineTo(1120, 200);
       ctx.stroke();
 
-      // Trao tặng subtitle - professional if Average- (TB-) or above, otherwise Amateur (Nghiệp Dư)
-      ctx.fillStyle = "#b45309";
-      const isProLevel = ['TB-', 'TB', 'TB+', 'Khá', 'Giỏi'].includes(result.level);
-      const genderLabel = isProLevel 
-        ? (profile.gender === 'female' ? 'NỮ LÔNG THỦ CHUYÊN NGHIỆP • BADMINTON CHAMPION' : 'NAM LÔNG THỦ CHUYÊN NGHIỆP • BADMINTON CHAMPION')
-        : (profile.gender === 'female' ? 'NỮ LÔNG THỦ PHONG TRÀO (NGHIỆP DƯ) • AMATEUR PLAYER' : 'NAM LÔNG THỦ PHONG TRÀO (NGHIỆP DƯ) • AMATEUR PLAYER');
-      ctx.font = "italic 700 16px 'Plus Jakarta Sans', sans-serif";
-      ctx.fillText(genderLabel, 520, 242);
 
       // Name - highlighted proudly in dark emerald
       ctx.fillStyle = "#022c22";
-      ctx.font = "900 48px 'Be Vietnam Pro', sans-serif";
+      ctx.font = "900 48px Arial, Helvetica, sans-serif";
       ctx.fillText(profile.name.toUpperCase(), 520, 315);
 
       // Achievement announcement
       ctx.fillStyle = "#334155";
-      ctx.font = "700 16px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "700 16px Arial, Helvetica, sans-serif";
       ctx.fillText("ĐÃ XUẤT SẮC ĐẠT ĐỒNG THUẬN TRÌNH ĐỘ:", 520, 375);
 
       // Trình Độ Badge
@@ -748,14 +740,14 @@ export default function App() {
       ctx.fillRect(520, 400, 260, 55);
       
       ctx.fillStyle = "#ffffff";
-      ctx.font = "800 28px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "800 28px Arial, Helvetica, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(`TRÌNH ${result.level.toUpperCase()}`, 650, 437);
 
       // Recenter text left for certification notes
       ctx.textAlign = "left";
       ctx.fillStyle = "#475569";
-      ctx.font = "600 14.5px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "600 14.5px Arial, Helvetica, sans-serif";
       ctx.fillText("Chứng nhận bởi Hệ thống Đánh giá Phong trào Badminton Checker.", 520, 502);
       ctx.fillText("Kết quả phản ánh chính xác thực chiến, thể lực và nhãn quan chiến thuật.", 520, 524);
 
@@ -787,7 +779,7 @@ export default function App() {
       ctx.stroke();
       
       // Decorative stars
-      ctx.font = "bold 13px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "bold 13px Arial, Helvetica, sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("★", -52, 0);
@@ -802,7 +794,7 @@ export default function App() {
           ctx.save();
           ctx.translate(radius * Math.cos(angle), radius * Math.sin(angle));
           ctx.rotate(angle + Math.PI / 2 * clockwise);
-          ctx.font = "bold 8px 'Plus Jakarta Sans', sans-serif";
+          ctx.font = "bold 8px Arial, Helvetica, sans-serif";
           ctx.fillText(char, 0, 0);
           ctx.restore();
         });
@@ -813,9 +805,9 @@ export default function App() {
       drawArcText("BADMINTON CHECKER", 53, Math.PI * 0.75, -1);
       
       // Central rubber confirmation seal details
-      ctx.font = "bold 20px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "bold 20px Arial, Helvetica, sans-serif";
       ctx.fillText("✔", 0, -8);
-      ctx.font = "bold 10px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "bold 10px Arial, Helvetica, sans-serif";
       ctx.fillText("ĐÃ DUYỆT", 0, 14);
       
       ctx.restore();
@@ -823,11 +815,11 @@ export default function App() {
 
       // Signature & Authority (Sitting clearly on top of the seal watermark)
       ctx.fillStyle = "#0f172a";
-      ctx.font = "800 15.5px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "800 15.5px Arial, Helvetica, sans-serif";
       ctx.fillText("BAN TRỌNG TÀI BADMINTON CHECKER", 520, 590);
       
       ctx.fillStyle = "#d97706";
-      ctx.font = "italic 600 13.5px 'Plus Jakarta Sans', sans-serif";
+      ctx.font = "italic 600 13.5px Arial, Helvetica, sans-serif";
       ctx.fillText("Đã chứng thực & đóng dấu kiểm định", 520, 612);
 
       // Export canvas
