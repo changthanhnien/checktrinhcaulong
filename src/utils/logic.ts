@@ -197,40 +197,4 @@ export const calculateResult = (selections: Record<string, number>, settings: Ad
     weaknesses: weaknesses.map(w => w.title),
     advice
   };
-}; chuyên biệt ${mentor.technical}. Đầu tư công phu trong ${mentor.timeline} sẽ giúp bạn nâng tầm chuyên môn lên cột mốc trình **${nextLevelInfo}**.`
-      ];
-      advice = getRandom(templates);
-    }
-
-    if (settings.length === 'short') {
-      advice = advice.split('.')[0] + ". " + (advice.split('.')[1] || "") + ".";
-    } else if (settings.length === 'medium') {
-      advice = advice.split('.').slice(0, 3).join('.') + ".";
-    }
-  } else {
-    const defaultAdvice: Record<AdviceTone, string[]> = {
-      encouraging: [
-        "Tui đánh giá bạn đang đi đúng hướng, hãy tiếp tục duy trì đam mê và tập luyện đều đặn. Với đà này, bạn sẽ sớm trở thành một tay vợt đáng gờm!",
-        "Tuyệt vời! Bạn sở hữu một nền tảng kỹ thuật và thể lực rất tiềm năng. Hãy luôn tự tin và tiếp tục rèn luyện theo đúng phác đồ nhé."
-      ],
-      strict: [
-        "Bạn đang có nhịp độ nâng trình tương đối, tuy nhiên tuyệt đối không được chủ quan. Bạn cần duy trì tập luyện kỹ thuật bền bỉ mới đạt hiệu quả tốt lâu dài.",
-        "Thi đấu đòi hỏi sự chuẩn xác và ổn định tuyệt đối. Đừng vội hài lòng với những gì đã đạt được, hãy liên tục tự thử thách nâng cao hiệu năng."
-      ],
-      humorous: [
-        "Hiệu suất thi đấu hiện tại của bạn đang giữ ở mức cân đối tốt, hãy chú trọng kiểm soát chi tiết các chuyển động nhỏ. Tui tin bạn sẽ còn nâng cấp cực tốt thế mạnh.",
-        "Một tay vợt phong trào hoàn thiện là sự kết hợp bền giữa kỹ thuật tốt và tư duy nhạy bén. Hãy tiếp tục cày ải để duy trì trạng thái tốt nhé."
-      ]
-    };
-    advice = getRandom(defaultAdvice[settings.tone]);
-  }
-
-  return {
-    level,
-    score: totalScore,
-    description,
-    strengths,
-    weaknesses: weaknesses.map(w => w.title),
-    advice
-  };
 };
