@@ -482,10 +482,11 @@ export default function App() {
   const downloadCertificate = () => {
     if (!result) return;
     const canvas = document.createElement('canvas');
-    canvas.width = 1200;
-    canvas.height = 675; // exact 16:9 aspect ratio standard HD
+    canvas.width = 1920;
+    canvas.height = 1080; // exactly 16:9 1080p HD
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    ctx.scale(1.6, 1.6); // Scale drawing commands from 1200x675 to 1920x1080
 
     // Draw rich beige/cream background
     ctx.fillStyle = "#fffdf5"; 
@@ -699,7 +700,7 @@ export default function App() {
 
       // Gold monogram
       ctx.fillStyle = "#fbbf24";
-      ctx.font = "900 13px 'Playfair Display', serif";
+      ctx.font = "900 13px 'Be Vietnam Pro', sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("BC", 0, 0.5);
@@ -708,11 +709,11 @@ export default function App() {
       // Main Headers - aligned beautiful left column
       ctx.textAlign = "left";
       ctx.fillStyle = "#d97706"; // Premium gold/amber
-      ctx.font = "italic 700 28px 'Playfair Display', serif";
+      ctx.font = "italic 700 28px 'Be Vietnam Pro', sans-serif";
       ctx.fillText("Chứng nhận vinh danh", 580, 115); // aligned next to brand logo
 
       ctx.fillStyle = "#064e3b"; // Slate emerald
-      ctx.font = "900 42px 'Playfair Display', serif";
+      ctx.font = "900 42px 'Be Vietnam Pro', sans-serif";
       ctx.fillText("BẰNG KHEN THÀNH TÍCH", 520, 175);
 
       // Elegant gold divider line
@@ -734,7 +735,7 @@ export default function App() {
 
       // Name - highlighted proudly in dark emerald
       ctx.fillStyle = "#022c22";
-      ctx.font = "900 48px 'Playfair Display', serif";
+      ctx.font = "900 48px 'Be Vietnam Pro', sans-serif";
       ctx.fillText(profile.name.toUpperCase(), 520, 315);
 
       // Achievement announcement
@@ -749,7 +750,7 @@ export default function App() {
       ctx.fillStyle = "#ffffff";
       ctx.font = "800 28px 'Plus Jakarta Sans', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText(`TRÌNH ${result.level}`, 650, 437);
+      ctx.fillText(`TRÌNH ${result.level.toUpperCase()}`, 650, 437);
 
       // Recenter text left for certification notes
       ctx.textAlign = "left";
@@ -860,8 +861,8 @@ export default function App() {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 1024 * 1024) { // 1MB limit
-        showToast('Ảnh quá lớn (tối đa 1MB)');
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        showToast('Ảnh quá lớn (tối đa 5MB)');
         return;
       }
       const reader = new FileReader();

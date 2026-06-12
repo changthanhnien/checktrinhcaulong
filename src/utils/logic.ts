@@ -187,7 +187,14 @@ export const calculateResult = (selections: Record<string, number>, settings: Ad
   ];
   const closing = closings[Math.floor(Math.random() * closings.length)];
 
-  const advice = `${greeting} ${complimentText}\n\n${empathyText}\n\n${actionText}\n\n${closing}`;
+  let advice = "";
+  if (settings.length === 'short') {
+    advice = `${greeting} ${actionText}`;
+  } else if (settings.length === 'medium') {
+    advice = `${greeting} ${complimentText}\n\n${actionText}`;
+  } else {
+    advice = `${greeting} ${complimentText}\n\n${empathyText}\n\n${actionText}\n\n${closing}`;
+  }
 
   return {
     level,
