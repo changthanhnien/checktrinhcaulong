@@ -262,7 +262,7 @@ export default function App() {
         const parsed = JSON.parse(savedProfile);
         setProfile({
           name: parsed.name || 'Lông Thủ',
-          avatar: parsed.avatar || PREDEFINED_AVATARS[0],
+          avatar: (parsed.avatar && getAvatars().some(a => a.url === parsed.avatar)) ? parsed.avatar : PREDEFINED_AVATARS[0],
           gender: parsed.gender || 'male'
         });
       } catch (e) {
